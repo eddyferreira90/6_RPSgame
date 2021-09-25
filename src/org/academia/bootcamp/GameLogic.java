@@ -1,38 +1,72 @@
 package org.academia.bootcamp;
 
-/*public class GameLogic {
+public class GameLogic {
 
-   *//* boolean rockBeats = Moves.ROCK > Moves.SCISSORS;
-    boolean scissorsBeats = Moves.SCISSORS > Moves.PAPER;
-    boolean paperBeats = Moves.PAPER > Moves.ROCK;
+    Moves newmove = Moves.ROCK;
 
-    // player vs computer choices
+    String one = "";
+    String two = "";
 
-    public void GameOn(Players players, Players players) {
-        int player1Move = player1.MakeMove();
-        int player2Move = player2.MakeMove();
+    int p1wins = 0;
+    int p2wins = 0;
 
 
+    public void StartGame (Players player1, Players player2){
 
-        switch (){
+        for (int i = 0; i < 3; ) {
+            switch (newmove.randomChoice()) {
 
-            case .ROCK:
-                if (players[i].){
-                    players counter++;
-                    System.out.println("");
+                case ROCK:
+                    one = "rock";
                     break;
-                }
-                if (scissorsBeats){
 
-                    System.out.println(player + "wins");
+                case PAPER:
+                    one = "paper";
                     break;
-                }
-                if (player == )
+
+                case SCISSORS:
+                    one = "scissors";
+                    break;
+
+            }
+
+            switch (newmove.randomChoice()) {
+
+                case ROCK:
+                    two = "rock";
+                    break;
+
+                case PAPER:
+                    two = "paper";
+                    break;
+
+                case SCISSORS:
+                    two = "scissors";
+                    break;
+
+            }
+
+            if (one.equals("rock") && two.equals("rock") || one.equals("paper") && two.equals("paper") || one.equals("scissors") && two.equals("scissors")) {
+                System.out.println(player1.GetName() + " chose " + one + " and " + player2.GetName() + " chose " + two + "\n" + "It's a tie!" + "\n");
+            }
+            if (one.equals("rock") && two.equals("scissors") || one.equals("paper") && two.equals("rock") || one.equals("scissors") && two.equals("paper")){
+                i++;
+                p1wins++;
+                System.out.println("Win");
+            }
+            if (two.equals("paper") && one.equals("rock") || two.equals("rock") && one.equals("scissors") || two.equals("scissors") && one.equals("paper")){
+                i++;
+                p2wins++;
+                System.out.println("Lost");
+            }
+
 
         }
+
+        if (p1wins > p2wins){
+            System.out.println(player1.GetName() + " won with " + p1wins + " points");
+        } else {
+            System.out.println(player2.GetName() + " won with " + p2wins + " points");
+        }
     }
-
-
-}*/
-
-
+}
