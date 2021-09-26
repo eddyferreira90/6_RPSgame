@@ -9,11 +9,10 @@ public class Main {
 
 
 
-        Players player1 = new Players("Jorge");
-        Players player2 = new Players("Manel");
+        Players[] players = new Players[]{new Players("Jorge"), new Players("Jorgina")};
 
         GameLogic start = new GameLogic();
-        start.StartGame(player1, player2);
+        start.StartGame(players);
 
 
 

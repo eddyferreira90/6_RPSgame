@@ -11,7 +11,7 @@ public class GameLogic {
     int p2wins = 0;
 
 
-    public void StartGame (Players player1, Players player2){
+    public void StartGame (Players[] players){
 
         for (int i = 0; i < 3; ) {
             switch (newmove.randomChoice()) {
@@ -47,26 +47,26 @@ public class GameLogic {
             }
 
             if (one.equals("rock") && two.equals("rock") || one.equals("paper") && two.equals("paper") || one.equals("scissors") && two.equals("scissors")) {
-                System.out.println(player1.GetName() + " chose " + one + " and " + player2.GetName() + " chose " + two + "\n" + "It's a tie!" + "\n");
+                System.out.println(players[0].GetName() + " chose " + one + " and " + players[1].GetName() + " chose " + two + "." + "\n" + "It's a tie!" + "\n");
             }
             if (one.equals("rock") && two.equals("scissors") || one.equals("paper") && two.equals("rock") || one.equals("scissors") && two.equals("paper")){
                 i++;
                 p1wins++;
-                System.out.println("Win");
+                System.out.println(players[0].GetName() + " chose " + one + " and " + players[1].GetName() + " chose " + two + "." + "\n" + players[0].GetName() + " won this round!" + "\n");
             }
             if (two.equals("paper") && one.equals("rock") || two.equals("rock") && one.equals("scissors") || two.equals("scissors") && one.equals("paper")){
                 i++;
                 p2wins++;
-                System.out.println("Lost");
+                System.out.println(players[0].GetName() + " chose " + one + " and " + players[1].GetName() + " chose " + two + "." + "\n" + players[1].GetName() + " won this round!" + "\n");
             }
 
 
         }
 
         if (p1wins > p2wins){
-            System.out.println(player1.GetName() + " won with " + p1wins + " points");
+            System.out.println(players[0].GetName() + " won with " + p1wins + " points!");
         } else {
-            System.out.println(player2.GetName() + " won with " + p2wins + " points");
+            System.out.println(players[1].GetName() + " won with " + p2wins + " points!");
         }
     }
 }
